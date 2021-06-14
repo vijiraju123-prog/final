@@ -31,8 +31,8 @@ model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metrics=['ac
 train_datagen = ImageDataGenerator(rescale=1./255, shear_range=0.2, zoom_range=0.2, horizontal_flip=True)
 test_datagen = ImageDataGenerator(rescale=1./255)
 
-train_generator = tensorflow.keras.preprocessing.image_dataset_from_directory(train_data_dir, target_size=(img_width, img_height),batch_size=32, class_mode='categorical')
-validation_generator = tensorflow.keras.preprocessing.image_dataset_from_directory(val_data_dir, target_size=(img_width, img_height),batch_size=32,class_mode='categorical')
+train_generator = tf.keras.preprocessing.image_dataset_from_directory(train_data_dir, target_size=(img_width, img_height),batch_size=32, class_mode='categorical')
+validation_generator = tf.keras.preprocessing.image_dataset_from_directory(val_data_dir, target_size=(img_width, img_height),batch_size=32,class_mode='categorical')
 history = model.fit( train_generator, epochs=2,steps_per_epoch=len(train_generator),validation_steps=len(validation_generator))
 class_names=['beagle', 'chihuahua', 'doberman', 'french_bulldog', 'golden_retriever', 'malamute', 'pug', 'saint_bernard', 'scottish_deerhound', 'tibetan_mastiff']
 
