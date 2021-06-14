@@ -1,8 +1,8 @@
 import numpy as np
 import pandas as pd
-from keras.preprocessing.image import ImageDataGenerator
-from keras.models import Model
-from keras.layers import Input, Flatten, Dense
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.models import Model
+from tensorflow.keras.layers import Input, Flatten, Dense
 import gradio as gr
 from keras.preprocessing import image
 from keras.applications.vgg16 import VGG16
