@@ -31,8 +31,8 @@ model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metrics=['ac
 train_datagen = ImageDataGenerator(rescale=1./255, shear_range=0.2, zoom_range=0.2, horizontal_flip=True)
 test_datagen = ImageDataGenerator(rescale=1./255)
 
-train_generator = train_datagen.flow_from_directory(requests.get("https://drive.google.com/drive/folders/1IdT1sAVHQXzjoyLq7nPewRlOWqd-_r1k?usp=sharing"), target_size=(img_width, img_height),batch_size=32, class_mode='categorical')
-validation_generator = test_datagen.flow_from_directory(requests.get("https://drive.google.com/drive/folders/1LPdKb7Ru74MCzgOEEnrfUsFcL1Ts7e4e?usp=sharing"), target_size=(img_width, img_height),batch_size=32,class_mode='categorical')
+train_generator = train_datagen.flow_from_directory(str(requests.get("https://drive.google.com/drive/folders/1IdT1sAVHQXzjoyLq7nPewRlOWqd-_r1k?usp=sharing")), target_size=(img_width, img_height),batch_size=32, class_mode='categorical')
+validation_generator = test_datagen.flow_from_directory(str(requests.get("https://drive.google.com/drive/folders/1LPdKb7Ru74MCzgOEEnrfUsFcL1Ts7e4e?usp=sharing")), target_size=(img_width, img_height),batch_size=32,class_mode='categorical')
 class_names=['beagle', 'chihuahua', 'doberman', 'french_bulldog', 'golden_retriever', 'malamute', 'pug', 'saint_bernard', 'scottish_deerhound', 'tibetan_mastiff']
 
 def predict_image(img):
