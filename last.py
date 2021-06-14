@@ -1,16 +1,10 @@
 import numpy as np
 import pandas as pd
-import keras
 from keras.preprocessing.image import ImageDataGenerator
 from keras.models import Model
 from keras.layers import Input, Flatten, Dense
-from keras.callbacks import Callback, ModelCheckpoint
 import gradio as gr
 from keras.preprocessing import image
-
-from keras.applications.resnet50 import ResNet50
-from keras.applications.resnet50 import preprocess_input
-from keras.layers import Conv2D,MaxPooling2D,Flatten,Dense,GlobalAveragePooling2D,Dropout
 from keras.applications.vgg16 import VGG16
 from keras.applications.vgg16 import preprocess_input
 import warnings
@@ -33,10 +27,6 @@ x = Dense(10, activation='softmax')(x)
 model=Model(inputs=put1,outputs=x)
 
 model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
-from keras.models import Sequential
-from keras.layers import Conv2D,MaxPooling2D,\
-     Dropout,Flatten,Dense,Activation,\
-     BatchNormalization
 train_datagen = ImageDataGenerator(rescale=1./255, shear_range=0.2, zoom_range=0.2, horizontal_flip=True)
 test_datagen = ImageDataGenerator(rescale=1./255)
 
