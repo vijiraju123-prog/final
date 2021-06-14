@@ -35,7 +35,7 @@ train_generator = train_datagen.flow_from_directory(train_data_dir, target_size=
                                                     batch_size=32, class_mode='categorical')
 validation_generator = test_datagen.flow_from_directory(val_data_dir, target_size=(img_width, img_height),
                                                         batch_size=32,class_mode='categorical')
-class_name=[a for a in os.listdir('/content/drive/MyDrive/train_new')]
+class_name=[a for a in os.listdir(train_data_dir)]
 class_names=sorted(class_name)
 print(class_names)
 
