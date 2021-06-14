@@ -13,8 +13,8 @@ model_vgg16 = VGG16(weights='imagenet', include_top=False)
 for layer in model_vgg16.layers:
     layer.trainable = False
 img_width, img_height = 150, 150
-train_data_dir = wget https://drive.google.com/drive/folders/1IdT1sAVHQXzjoyLq7nPewRlOWqd-_r1k?usp=sharing
-val_data_dir = wget https://drive.google.com/drive/folders/1LPdKb7Ru74MCzgOEEnrfUsFcL1Ts7e4e?usp=sharing
+train_data_dir = gdown https://drive.google.com/drive/folders/1IdT1sAVHQXzjoyLq7nPewRlOWqd-_r1k?usp=sharing
+val_data_dir = gdown https://drive.google.com/drive/folders/1LPdKb7Ru74MCzgOEEnrfUsFcL1Ts7e4e?usp=sharing
 model_weights_file = 'model_vgg16.h5'
 nb_train_samples = 4
 nb_val_samples = 4
